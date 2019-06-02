@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisAutoConfiguration.class})
-//@MapperScan(value = "cuc.dawei.springbootprogramintegration.mapper")
+//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisAutoConfiguration.class})
+@MapperScan(value = "cuc.dawei.springbootprogramintegration.mapper")
 @EnableScheduling
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class SpringbootprogramintegrationApplication {
 
     public static void main(String[] args) {
