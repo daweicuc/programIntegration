@@ -6,6 +6,7 @@ import cuc.dawei.springbootprogramintegration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,14 +34,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int updateUser(String name1, String name2) {
-        userMapper.updateUser(name1,name2);
-        return 0;
+        int q1=userMapper.updateUser(name1,name2);
+        return q1;
     }
 
     @Override
     public List<User> getAllUser() {
+        List<User> listUser=new ArrayList<>();
         userMapper.getAllUser();
-        return null;
+        return userMapper.getAllUser();
     }
 
     @Override
