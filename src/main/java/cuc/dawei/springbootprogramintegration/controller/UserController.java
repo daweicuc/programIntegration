@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import java.util.List;
  * @Date 2019/6/2 17:18
  * @Version 1.0
  */
+@EnableAsync
 @RestController
 @RequestMapping(value="user",produces = "application/json;charset=utf-8")
 @Api(tags="对用户的管理API")

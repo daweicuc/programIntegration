@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 //@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisAutoConfiguration.class})
 @MapperScan(value = "cuc.dawei.springbootprogramintegration.mapper")
-@EnableScheduling
+@EnableScheduling//开启定时任务
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class SpringbootprogramintegrationApplication {
 
