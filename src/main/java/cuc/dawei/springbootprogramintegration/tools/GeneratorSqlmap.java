@@ -9,6 +9,9 @@ import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
+/**
+ * 执行逆向工程操作
+ */
 public class GeneratorSqlmap {
 
 	public void generator() throws Exception{

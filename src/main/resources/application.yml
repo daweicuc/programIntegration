@@ -38,7 +38,9 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
-
+logging:
+  config: classpath:logback-spring.xml
+  file: log\hjzx-log.%d{yyyy-MM-dd}.%i.log
 #    schema:
 #      - classpath:sql/department.sql
 #      - classpath:sql/employee.sql

@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName ArticleController
- * @Description TODO
+ * @Description 下面是查看新闻第一个篇文章内容
  * @Author Mike
  * @Date 2019/6/2 15:49
  * @Version 1.0
  */
+
 @RestController
 @RequestMapping(value="unicom")
 @Api(tags = "联通新闻网页接口API")

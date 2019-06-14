@@ -6,7 +6,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * @ClassName RedisUtil
- * @Description TODO
+ * @Description 操作Redis数据库
  * @Author Mike
  * @Date 2019/6/2 18:25
  * @Version 1.0

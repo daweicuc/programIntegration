@@ -10,6 +10,11 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/***
+ * 下面是配置swagger2的内容
+ *访问下面页面看接口内容：
+ * http://localhost:8080/swagger-ui.html
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2Config {

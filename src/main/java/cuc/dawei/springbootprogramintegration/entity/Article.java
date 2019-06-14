@@ -2,6 +2,12 @@ package cuc.dawei.springbootprogramintegration.entity;
 
 import java.util.Date;
 
+/**
+ * 下面内容：Article,ArticleExample,Category,CategoryExample,Navbar,NavbarExample,Share,ShareExample
+ * /mybatis/mapper/*xml
+ * ArticleMapper，CategoryMapper，NavbarMapper，ShareMapper
+ * 都是逆向工程操作生成的代码
+ */
 public class Article {
     private Integer id;
 
