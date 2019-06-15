@@ -11,4 +11,5 @@ import cuc.dawei.springbootprogramintegration.entity.Article;
  */
 public interface ArticleService {
     Article getArticle(int id);
+    int updateArticle(String s,Article article);
 }

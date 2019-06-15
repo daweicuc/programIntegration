@@ -28,7 +28,7 @@ public interface ArticleMapper {
 
     int updateByExampleWithBLOBs(@Param("record") Article record, @Param("example") ArticleExample example);
 
-    int updateByExample(@Param("record") Article record, @Param("example") ArticleExample example);
+    int updateByExample(@Param("record") String record, @Param("example") Article example);
 
     int updateByPrimaryKeySelective(Article record);
 

@@ -21,4 +21,9 @@ public class ArticleServiceImpl implements ArticleService {
     public Article getArticle(int id) {
         return articleMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public int updateArticle(String s,Article article) {
+        return articleMapper.updateByExample(s,article);
+    }
 }

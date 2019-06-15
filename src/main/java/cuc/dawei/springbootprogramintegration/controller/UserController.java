@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.*;
 
@@ -80,4 +81,13 @@ public class UserController {
             e.printStackTrace();
         }
     }
+
+    @GetMapping(value = "getAllUserCache")
+    @ApiOperation(value = "获取所有用户信息")
+    @Cacheable(value = "UserCache")
+    public List<User> TestCache(){
+        System.out.println(userService.getAllUser());
+        return  userService.getAllUser();
+    }
+
 }

@@ -2,6 +2,8 @@ package cuc.dawei.springbootprogramintegration.entity;
 
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 /**
  * @ClassName User
  * @Description TODO
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @Version 1.0
  */
 @Component
-public class User {
+public class User implements Serializable {
     private int id;
     private String name;
     private String pasd;

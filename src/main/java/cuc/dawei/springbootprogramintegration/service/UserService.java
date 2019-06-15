@@ -20,5 +20,7 @@ public interface UserService {
     int deleteUser(String name);
     int updateUser( String name1,String name2);
     List<User> getAllUser();
-    List<User> getUserById(String id);
+//    List<User> getUserById(String id);
+
+    User getUserById(int id);
 }

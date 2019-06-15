@@ -23,5 +23,5 @@ public interface UserMapper {
     @Select("select * from user")
     List<User> getAllUser();
     @Select("select * from user where id=#{id}")
-    List<User> getUserById(@Param("id") String id);
+    User getUserById(@Param("id") int id);
 }

@@ -4,5 +4,10 @@
       "name": "spring.datasource.initialSize",
       "type": "java.lang.String",
       "description": "Description for spring.datasource.initialSize."
-  }
-] }
+    },
+    {
+      "name": "spring.redis.jedis.timeout",
+      "type": "java.lang.String",
+      "description": "Description for spring.redis.jedis.timeout."
+    }
+  ] }

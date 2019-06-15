@@ -1,5 +1,6 @@
 package cuc.dawei.springbootprogramintegration.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * ArticleMapper，CategoryMapper，NavbarMapper，ShareMapper
  * 都是逆向工程操作生成的代码
  */
-public class Article {
+public class Article  implements Serializable {
     private Integer id;
 
     private Integer categoryId;
