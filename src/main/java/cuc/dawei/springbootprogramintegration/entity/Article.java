@@ -22,6 +22,30 @@ public class Article  implements Serializable {
 
     private String content;
 
+    public Article() {
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", categoryId=" + categoryId +
+                ", title='" + title + '\'' +
+                ", releaseTime=" + releaseTime +
+                ", user='" + user + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
+
+    public Article(Integer id, Integer categoryId, String title, Date releaseTime, String user, String content) {
+        this.id = id;
+        this.categoryId = categoryId;
+        this.title = title;
+        this.releaseTime = releaseTime;
+        this.user = user;
+        this.content = content;
+    }
+
     public Integer getId() {
         return id;
     }

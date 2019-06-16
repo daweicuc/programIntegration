@@ -81,13 +81,12 @@ public class UserController {
             e.printStackTrace();
         }
     }
-
-    @GetMapping(value = "getAllUserCache")
+//使用注解@Cacheable，需要序列化和反序列化,需要配置文件
+    @GetMapping(value = "getAllUserCache/{id}")
     @ApiOperation(value = "获取所有用户信息")
-    @Cacheable(value = "UserCache")
-    public List<User> TestCache(){
+    @Cacheable(cacheNames = "UserCache",keyGenerator = "firstParamKeyGenerator")//
+    public List<User> TestCache(@PathVariable int id){
         System.out.println(userService.getAllUser());
         return  userService.getAllUser();
     }
-
 }

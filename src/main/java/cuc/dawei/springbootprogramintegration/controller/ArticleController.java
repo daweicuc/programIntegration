@@ -5,7 +5,9 @@ import cuc.dawei.springbootprogramintegration.service.ArticleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 /**
@@ -19,17 +21,35 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value="unicom")
+@RequestMapping(value="unicom",produces = "application/json;charset=utf-8")
 @Api(tags = "联通新闻网页接口API")
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
-    @RequestMapping(value="article")
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+//    @Autowired
+//    private RedisHelperImpl redisHelper;
+    @RequestMapping(value="article/{id}")
     @ApiOperation(value = "从库中找到第一篇文章")
-    @Cacheable(cacheNames = "查文章")
-    public Article getArticle(){
+//    @Cacheable(cacheNames = "getarticle211121")
+    public Article getArticle(@PathVariable int id){
         System.out.println("查询文章1");
-        return articleService.getArticle(1);
+        boolean exists=redisTemplate.hasKey("article"+id);
+        if(exists){
+            System.out.println("缓存中的数据："+redisTemplate.opsForValue().get("article"+id));
+            return null;
+        }else{
+            Article article=articleService.getArticle(id);
+            redisTemplate.opsForValue().set("article"+id,article);
+            return article;
+        }
+
+
     }
 
 }
